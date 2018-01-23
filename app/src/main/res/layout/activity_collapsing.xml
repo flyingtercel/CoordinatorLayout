@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="us.mifeng.coordinatorlayout.Coordinator01">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:fitsSystemWindows="true"
+        android:background="#ff0">
+        <!--
+                CollapsingToolbarLayout:辅助ToolBar实现一些效果
+                contentScrim：指定在折叠之后的背景色
+                collapsedTitleGravity: 指定在折叠之后标题放置的位置
+                collapsedTitleTextAppearance在折叠的时候标题文字的外观
+                expandedTitleGravity:指定在展开之后标题放置的位置
+                expandedTitleMargin：展开之后的margin设置，
+                statusBarScrim：在折叠的时候 状态栏的背景颜色
+                title：如果标题可用的话 显示的标题文字
+                titleEnabled：是否显示标题
+                toolbarId：在折叠的时候 显示的toolbar的id
+            -->
+        <!--
+            对CollapsingToolbarLayout子布局的属性设置
+            layout_collapseParallaxMultiplier:当CollapsingToolbarLayout的子布局设置了parallax模式时，我们还可以通过此方式设置视差滚动因子，值为：0~1。
+                layout_collapseMode：设置合并的方式
+                        off：这个是默认属性，布局将正常显示，没有折叠的行为。
+                        parallax：CollapsingToolbarLayout折叠时，此布局也会有视差折叠效果。
+                        pin:CollapsingToolbarLayout折叠后，此布局将固定在顶部。
+        -->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="#efefef"
+            app:title="哈哈哈哈哈"
+            app:expandedTitleGravity="bottom"
+            app:expandedTitleMarginEnd="10dp"
+            app:collapsedTitleGravity="right"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5"
+                android:src="@mipmap/ic_launcher_round"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

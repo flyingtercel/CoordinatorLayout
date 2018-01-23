@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:id="@+id/layout"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize">
+        <ImageButton
+            android:id="@+id/leftIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/btn_radio"/>
+
+        <TextView
+            android:id="@+id/toolTitle"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:text="你好"
+            android:textSize="20sp"
+            android:layout_height="match_parent" />
+        <ImageButton
+            android:id="@+id/rightIcon"
+            android:src="@android:drawable/btn_star"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/searchView"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+</LinearLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="us.mifeng.coordinatorlayout.Coordinator01">
+
+    <!--
+        两个布局，第一个是头部布局，
+                   第二个是可滑动布局（RecyclerView,NestedScrollView）
+    -->
+    <!--
+            设置头部布局的滑动方式
+            scroll:                     设置这个flag之后 Toolbar会滚出屏幕外部，如果不设置这个Toolbar 会固定在顶部不动。
+            enterAlways:                这个flag跟scroll一块使用时，向上滑动时ToolBar移出屏幕，我们向下滑动时Toolbar进入屏幕。
+            exitUntilCollapsed:          这个跟上面的enterAlwaysCollapsed相反；它也涉及到minHeight，当发生向上滚动事件时，AppLayout向上滚动，直到我们设置的minHeight，然后我们的滑动View才开始滚动。就算我们滑动的view完全上滑完毕，我们的AppBarLayout也会一直保留我们设置的民Height显示在屏幕的上方。
+            enterAlwaysCollapsed:       enterAlways的附加值。这里涉及到Child View的高度和最小高度，向下滚动时，Child View先向下滚动最小高度值，然后Scrolling View开始滚动，到达边界时，Child View再向下滚动，直至显示完全
+            snap:                        与scroll一起使用时，我们只需要滑动一小段距离，AppBarLayout就会随着我们滑动的View向上滑出屏幕。AppBarLayout会跟随着我们滑动View的滑动，当AppBarLayout滑出屏幕的部分大于显示区域，我们松开手指，AppBarLayout就会自动滑出屏幕；当AppBarLayout滑出屏幕的部分小于显示区域，我们松开手指，AppBarLayout就会自动滑进屏幕。
+
+    -->
+    <!--头部布局-->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff0">
+        <!--appBar-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+            app:buttonGravity="bottom"
+            android:layout_height="200dp"
+            android:minHeight="?attr/actionBarSize">
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <!--
+           layout_behavior:设置滑动视图与顶部视图之间的位置关系
+                        bottom_sheet_behavior:滑动视图在顶部视图的上面
+                        appbar_scrolling_view_behavior:滑动视图在顶部视图的下面
+    -->
+    <android.support.v4.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
